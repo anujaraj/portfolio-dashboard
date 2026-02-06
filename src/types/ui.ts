@@ -1,7 +1,7 @@
 export type UIStock = {
   sector: string;
   name: string;
-  symbol: string;
+  symbol?: string;
   qty: number;
   purchasePrice: number;
   investment: number;
