@@ -3,7 +3,7 @@ import PortfolioContainer from "@/components/PortfolioContainer";
 
 
   async function getPortfolio(){
-    const res=await fetch("http://localhost:3000/api/portfolio",{
+      const res = await fetch(`${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'}/api/portfolio`,    {
       cache:"no-store"
     })
     if(!res.ok){
