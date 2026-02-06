@@ -1,20 +1,16 @@
 import { UIStock } from "@/types/ui";
 import PortfolioContainer from "@/components/PortfolioContainer";
+import portfolioData from "@/data/portfolio.json";
 
-
-  async function getPortfolio(){
-    const res=await fetch("http://localhost:3000/api/portfolio",{
-      cache:"no-store"
-    })
-    if(!res.ok){
-      throw new Error("Failed to fetch potfolio");
-    }
-    return res.json();
-  }
+import { transformPortfolio } from "@/lib/transformPortfolio";
+import { enrichPortfolio } from "@/lib/enrichPortfolio";
+import { calculatePortfolio } from "@/lib/calculatePortfolio";
 
 export default async function Home() {
 
-  const rows : UIStock[]=await getPortfolio();
+  const rows: UIStock[] = transformPortfolio(portfolioData);
+  const enrichedRows = await enrichPortfolio(rows);
+  const finalRows = calculatePortfolio(enrichedRows);
 
   return (
     <main className="p-6">
@@ -23,7 +19,7 @@ export default async function Home() {
       </h1>
 
       <div className="overflow-x-auto border rounded-lg">
-        <PortfolioContainer initialData={rows}/>
+        <PortfolioContainer initialData={finalRows} />
       </div>
     </main>
   );
