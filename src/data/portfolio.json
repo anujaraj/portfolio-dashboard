@@ -1,0 +1,30 @@
+[
+  {
+    "sector": "Financial Sector",
+    "stocks": [
+      {
+        "name": "HDFC Bank",
+        "purchasePrice": 1490,
+        "qty": 50,
+        "exchangeCode": "HDFCBANK"
+      },
+      {
+        "name": "Bajaj Finance",
+        "purchasePrice": 6466,
+        "qty": 15,
+        "exchangeCode": "BAJFINANCE"
+      }
+    ]
+  },
+  {
+    "sector": "Tech Sector",
+    "stocks": [
+      {
+        "name": "Affle India",
+        "purchasePrice": 1151,
+        "qty": 50,
+        "exchangeCode": "AFFLE"
+      }
+    ]
+  }
+]
