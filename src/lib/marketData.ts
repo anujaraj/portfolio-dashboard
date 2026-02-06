@@ -13,11 +13,5 @@ const MOCK_MARKET_DATA: Record<string, MarketData> = {
 
 export async function getMarketData(symbol: string): Promise<MarketData> {
   await new Promise(res => setTimeout(res, 100));
-  return (
-    MOCK_MARKET_DATA[symbol] || {
-      cmp: 0,
-      pe: 0,
-      earnings: 0
-    }
-  );
+  return MOCK_MARKET_DATA[symbol] ?? { cmp: 0, pe: 0, earnings: 0 };
 }
