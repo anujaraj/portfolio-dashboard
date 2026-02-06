@@ -1,5 +1,4 @@
 import { UIStock } from "@/types/ui";
-import PortfolioTable from "@/components/PortfolioTable";
 import PortfolioContainer from "@/components/PortfolioContainer";
 
 

@@ -16,7 +16,7 @@ export default function PortfolioContainer({
   const [error, setError] = useState<string | null>(null);
 
   const grouped = groupBySector(data);
-  console.log(grouped);
+ 
 
   async function refresh() {
     try{
