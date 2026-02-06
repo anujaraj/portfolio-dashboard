@@ -11,7 +11,7 @@ export function transformPortfolio(sectors:Sector[]):UIStock[] {
             rows.push({
                 sector: sector.sector,
                 name: stock.name,
-                symbol: stock.exchangeCode,
+                symbol: stock.exchangeCode ?? "N/A",
                 purchasePrice: stock.purchasePrice,
                 qty: stock.qty,
                 investment
