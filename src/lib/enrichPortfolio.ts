@@ -4,7 +4,8 @@ import { getMarketData } from "./marketData";
 export async function enrichPortfolio(stocks: UIStock[]) {
   return Promise.all(
     stocks.map(async stock => {
-      const market = await getMarketData(stock.symbol);
+      const market = await getMarketData(stock.symbol ?? "DEFAULT_SYMBOL");
+
 
       const presentValue = market.cmp * stock.qty;
       const gainLoss = presentValue - stock.investment;
